@@ -1,0 +1,20 @@
+---
+layout: page
+title: Blog
+description: Curation of my thoughts
+---
+<header>
+  <h2>Blog Posts</h2>
+</header>
+
+  {% for post in site.posts %}
+    <li>
+      <h3><a href="{{ post.url }}">{{ post.title }}</h3>
+        <p>{{post.excerpt | strip_html}}</p>
+    </li>
+  {% endfor %}
+</ul>
+<header><h2>Notable websites</h2></header>
+<ul class="alt">
+  <li><a href="http://tom.preston-werner.com">Tom Preston Werner's website contains some interesting blog posts</a></li>
+</ul>
