@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Blue-Apron-IPO
-description: Curation of my thoughts
 ---
 I stumbled upon this stock while browsing WSB as it peaked my attention due
 to the fact that they were poking fun of this stock. As I uncovered more info
