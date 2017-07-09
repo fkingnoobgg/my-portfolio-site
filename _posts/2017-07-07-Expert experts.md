@@ -15,28 +15,28 @@ So which disciplines actually have experts? And which have none?
 
 The following list of examples have been derived from Nassim's book The Black Swan
 Experts who tend to be experts:
-*livestock judges
-*Astronomers
-*Test pilots
-*Chest masters
-*Physicists
-*Chess masters
-*Accountants
-*Insurance analysts (dealing with bell curve-style statistics/ Gaussian distribution)
+* livestock judges
+* Astronomers
+* Test pilots
+* Chest masters
+* Physicists
+* Chess masters
+* Accountants
+* Insurance analysts (dealing with bell curve-style statistics/ Gaussian distribution)
 
-Experts who tend to be.... not experts
-*Stockbrokers
-*Clinical psychologists
-*Psychiatrists
-*College admissions officers
-*Court judges
-*Councilors
-*Personnel selectors
-*Intelligence analysts
-*Economists
-*Finacial forecasters
-*Finance professors
-*Political scientists 
+Experts who tend to be.... not experts:
+* Stockbrokers
+* Clinical psychologists
+* Psychiatrists
+* College admissions officers
+* Court judges
+* Councilors
+* Personnel selectors
+* Intelligence analysts
+* Economists
+* Finacial forecasters
+* Finance professors
+* Political scientists 
 
 Of course we cannot provide and exhaustive list for each case but perhaps we could form a general rule for classifying disciplines with experts and those with none (e.g. ones that have no value added). 
 In Taleb's words

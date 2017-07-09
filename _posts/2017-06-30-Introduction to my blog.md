@@ -4,7 +4,7 @@ title: introduction to my blog
 ---
 
 As Aswath Damodaran would put it I am a numbers person not a story teller. I prefer a
-a conclusion that is back up by concrete facts (usually numbers). Similar to
+a conclusion that is backed up by concrete facts (usually numbers). Similar to
 Damodaran I avoided English classes and completed the minimal work although the same
 could be said with all my other classes but the truth is I barely passed English
 and in fact I nearly failed to get into university because my English scores
