@@ -1,6 +1,6 @@
 ---
 layout: post
-title: introduction to my blog
+title: Introduction to my Blog
 ---
 
 As Aswath Damodaran would put it I am a numbers person not a story teller. I prefer a
