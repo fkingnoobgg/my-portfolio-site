@@ -8,13 +8,18 @@
         <div id="menu">
           <ul>
             <li><a href="{{site.baseurl}}/index.html">Home</a></li>
-            {% for my_page in site.pages %}
+            <!-- {% for my_page in site.pages %}
             {% if my_page.title %}
             <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
             {% endif %}
             {% endfor %}
             <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><a href="#">Log In</a></li> -->
+            <li><a href="{{site.baseurl}}/blog.html">Blog</a></li>
+            <li><a href="{{site.baseurl}}/index.html/#cta">Contact</a></li>
+            <li><a href="{{site.baseurl}}/index.html/#about">About</a></li>
+            <li><a href="{{site.baseurl}}/index.html/#academics">Academics</a></li>
+            <li><a href="{{site.baseurl}}/index.html/#projects">Projects</a></li>
             <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"
                    class="icon fa-feed"> RSS Feed</a></li>
           </ul>
