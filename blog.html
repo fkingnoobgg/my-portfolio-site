@@ -10,7 +10,7 @@ description: Curation of my thoughts
 <ul class="alt">
   {% for post in site.posts %}
     <li>
-      <h3><a href="{{site.baseurl}}/{{ post.url }}">{{ post.title }}</h3>
+      <h3><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</h3>
         <p>{{post.excerpt | strip_html}}</p>
     </li>
   {% endfor %}
