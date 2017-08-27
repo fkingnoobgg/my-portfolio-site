@@ -18,7 +18,7 @@ Experts who tend to be experts:
 * livestock judges
 * Astronomers
 * Test pilots
-* Chest masters
+* Chess masters
 * Physicists
 * Chess masters
 * Accountants

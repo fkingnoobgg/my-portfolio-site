@@ -4,7 +4,7 @@
         var reader = new FileReader();
         reader.onload = function () {
             data = reader.result;
-            lines = data.split('\n');
+            lines = data.trim().split('\n');
             headers = lines[0].split(',')
             parsedData = [];
             for (var i = 1; i < lines.length; i++) {
@@ -16,6 +16,7 @@
                 }
                 parsedData.push(parsedLine)
             }
+            //console.log(parsedData);
             var VWAP = calcVWAP(parsedData);
             console.log(VWAP);
         };
@@ -27,9 +28,12 @@
         var volume = 0;
         var cumWeightedPrice = 0;
         for (var i = 0; i < data.length; i++) {
-            cumWeightedPrice += data[i].Volume * data[i].Last;
-            volume += data[i].Volume;
+            var volumeTraded = parseFloat(data[i].Volume);
+            var price = parseFloat(data[i].Last);
+            cumWeightedPrice = cumWeightedPrice + (volumeTraded * price);
+            volume = volume + volumeTraded;
         }
+        //console.log(parseFloat(data[0].Last));
         return cumWeightedPrice/volume;
     }
     myfile.addEventListener('change', readFile);
