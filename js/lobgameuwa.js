@@ -18,7 +18,8 @@
             }
             //console.log(parsedData);
             var VWAP = calcVWAP(parsedData);
-            console.log(VWAP);
+            var usersScores = calcScores(parsedData, VWAP);
+            //console.log(usersScores);
         };
         // start reading the file. When it is done, calls the onload event defined above.
         reader.readAsBinaryString(myfile.files[0]);
@@ -35,6 +36,29 @@
         }
         //console.log(parseFloat(data[0].Last));
         return cumWeightedPrice/volume;
+    }
+
+    function calcScores(data, VWAP) {
+        usersScores = {};
+        for (var i = 0; i < data.length; i++) {
+
+            var volume = parseFloat(data.Volume);
+            var price = parseFloat(data.Last);
+
+            if (data.Bidder in usersScores) {
+                usersScores[data.Bidder] = usersScores[data.Bidder] + volume * (price - VWAP);
+            } else {
+                usersScores[data.Bidder] = volume * (price - VWAP);
+            }
+
+            if (data.Asker in usersScores) {
+                usersScores[data.Asker] = usersScores[data.Asker] + volume * (VWAP - price);
+            } else {
+                usersScores[data.Asker] = volume * (VWAP - price);
+            }
+            console.log(usersScores);
+        }
+        return usersScores;
     }
     myfile.addEventListener('change', readFile);
 })(jQuery);
