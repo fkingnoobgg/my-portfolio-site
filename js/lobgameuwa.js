@@ -1,5 +1,12 @@
 (function($) {
+
     var myfile = document.getElementById("myfile");
+    myfile.addEventListener('change', readFile);
+
+    /*
+        Main function that reads and parses the data from csv file.
+        Calls aproppriate functions to generate each users rank
+    */
     function readFile() {
         var reader = new FileReader();
         reader.onload = function () {
@@ -25,6 +32,10 @@
         reader.readAsBinaryString(myfile.files[0]);
     }
 
+    /*
+        Given a list of transactions this function calculates the volume weighted
+        average price. 
+    */
     function calcVWAP(data) {
         var volume = 0;
         var cumWeightedPrice = 0;
@@ -38,6 +49,11 @@
         return cumWeightedPrice/volume;
     }
 
+    /*
+        For each buy trade i, trading costs is: Volume x (TPi - VWAP)
+        For each sell trades j, trading costs is: Volume x (VWAP - TPj)
+        Aggregates user scores for all their transactions
+    */
     function calcScores(data, VWAP) {
         usersScores = {};
         for (var i = 0; i < data.length; i++) {
@@ -61,6 +77,9 @@
         return usersScores;
     }
 
+    /*
+        Sums all the scores of participants in game and result should be around 0
+    */
     function sumScores(scores) {
         var sum = 0;
         for (var score in scores) {
@@ -69,5 +88,5 @@
         console.log(sum);
         return sum
     }
-    myfile.addEventListener('change', readFile);
+
 })(jQuery);
