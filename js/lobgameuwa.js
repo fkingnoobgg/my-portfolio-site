@@ -19,7 +19,7 @@
             //console.log(parsedData);
             var VWAP = calcVWAP(parsedData);
             var usersScores = calcScores(parsedData, VWAP);
-            //console.log(usersScores);
+            sumScores(usersScores);
         };
         // start reading the file. When it is done, calls the onload event defined above.
         reader.readAsBinaryString(myfile.files[0]);
@@ -41,24 +41,33 @@
     function calcScores(data, VWAP) {
         usersScores = {};
         for (var i = 0; i < data.length; i++) {
+            var transaction = data[i];
+            var volume = parseFloat(transaction.Volume);
+            var price = parseFloat(transaction.Last);
 
-            var volume = parseFloat(data.Volume);
-            var price = parseFloat(data.Last);
-
-            if (data.Bidder in usersScores) {
-                usersScores[data.Bidder] = usersScores[data.Bidder] + volume * (price - VWAP);
+            if (transaction.Bidder in usersScores) {
+                usersScores[transaction.Bidder] = usersScores[transaction.Bidder] + volume * (price - VWAP);
             } else {
-                usersScores[data.Bidder] = volume * (price - VWAP);
+                usersScores[transaction.Bidder] = volume * (price - VWAP);
             }
 
-            if (data.Asker in usersScores) {
-                usersScores[data.Asker] = usersScores[data.Asker] + volume * (VWAP - price);
+            if (transaction.Asker in usersScores) {
+                usersScores[transaction.Asker] = usersScores[transaction.Asker] + volume * (VWAP - price);
             } else {
-                usersScores[data.Asker] = volume * (VWAP - price);
+                usersScores[transaction.Asker] = volume * (VWAP - price);
             }
             console.log(usersScores);
         }
         return usersScores;
+    }
+
+    function sumScores(scores) {
+        var sum = 0;
+        for (var score in scores) {
+            sum = sum + scores[score];
+        }
+        console.log(sum);
+        return sum
     }
     myfile.addEventListener('change', readFile);
 })(jQuery);
