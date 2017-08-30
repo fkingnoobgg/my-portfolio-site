@@ -73,7 +73,7 @@
             } else {
                 usersScores[transaction.Asker] = volume * (VWAP - price);
             }
-            console.log(usersScores);
+            //console.log(usersScores);
         }
         return usersScores;
     }
@@ -86,7 +86,7 @@
         for (var score in scores) {
             sum = sum + scores[score];
         }
-        console.log(sum);
+        //console.log(sum);
         return sum
     }
 
@@ -95,9 +95,25 @@
     */
     function displayScores(scores) {
         sortedScores = sortScores(scores);
+        console.log(sortedScores);
+        var $mytable = $("#mytable");
         for (var i = 0; i < sortedScores.length; i++) {
-            sortedScores[i]
+            $mytable.append("<tr><td>"+i+"</td><td>"+sortedScores[i][0]+"</td><td>"+Math.round(sortedScores[i][1])+"</td></tr>");
         }
+    }
+
+    /*
+        Sorts object
+    */
+    function sortScores(scores) {
+        var sortedScores = [];
+        for (var user in scores) {
+            sortedScores.push([user, scores[user]]);
+        }
+        sortedScores.sort(function(a, b) {
+            return a[1] - b[1]
+        });
+        return sortedScores
     }
 
 })(jQuery);
