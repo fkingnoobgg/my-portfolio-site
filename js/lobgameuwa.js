@@ -27,6 +27,7 @@
             var VWAP = calcVWAP(parsedData);
             var usersScores = calcScores(parsedData, VWAP);
             sumScores(usersScores);
+            displayScores(usersScores);
         };
         // start reading the file. When it is done, calls the onload event defined above.
         reader.readAsBinaryString(myfile.files[0]);
@@ -34,7 +35,7 @@
 
     /*
         Given a list of transactions this function calculates the volume weighted
-        average price. 
+        average price.
     */
     function calcVWAP(data) {
         var volume = 0;
@@ -87,6 +88,16 @@
         }
         console.log(sum);
         return sum
+    }
+
+    /*
+        Prints out user ranks in a table
+    */
+    function displayScores(scores) {
+        sortedScores = sortScores(scores);
+        for (var i = 0; i < sortedScores.length; i++) {
+            sortedScores[i]
+        }
     }
 
 })(jQuery);
