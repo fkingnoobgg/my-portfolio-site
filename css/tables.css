@@ -8,10 +8,10 @@ div.table-title {
   width: 100%;
 }
 
-.table-title h3 {
-   color: #fafafa;
-   font-size: 30px;
-   font-weight: 400;
+.table-title {
+   color: #ffffff;
+   font-size: 20px;
+   font-weight: 500;
    font-style:normal;
    font-family: "Roboto", helvetica, arial, sans-serif;
    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,7 @@ div.table-title {
   width: 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   animation: float 5s infinite;
+  margin-top: 50px;
 }
 
 th {
@@ -133,4 +134,11 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+#myfile {
+    color: #1d242a;
+    background: rgba(0,0,0,0);
+    border: solid 2px #1d242a;
+    padding: 5px
 }
